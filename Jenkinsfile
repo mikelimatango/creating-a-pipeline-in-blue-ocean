@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'sh \'python --version\''
+        sh 'python install'
       }
     }
     stage('Test') {
