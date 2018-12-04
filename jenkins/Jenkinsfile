@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        sh 'python --version'
         sh 'docker stop flask'
         sh 'docker swarm leave -f'
         sh 'docker build -t macalahthomas/tcmg476:four .'
