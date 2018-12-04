@@ -10,6 +10,11 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
+        sh 'docker stop flask'
+        sh 'docker swarm leave -f'
+        sh 'docker build -t macalahthomas/tcmg476:four .'
+        sh 'docker swarm init'
+        sh 'docker stack deploy -c docker-compose.yml flask'
       }
     }
     stage('Test') {
