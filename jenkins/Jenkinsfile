@@ -22,7 +22,8 @@ pipeline {
         CI = 'true'
       }
       steps {
-        sh './jenkins/scripts/test.sh'
+        sh 'python3 -m pip install requests'
+        sh 'python3 ./test.py'
       }
     }
     stage('Deliver') {
